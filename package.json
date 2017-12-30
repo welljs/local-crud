@@ -1,0 +1,38 @@
+{
+  "name": "local-crud",
+  "version": "1.0.0",
+  "description": "CRUD emulation in browser storage",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "mocha --require ts-node/register -r jsdom-global/register test/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/welljs/local-crud.git"
+  },
+  "keywords": [
+    "CRUD",
+    "local",
+    "storage",
+    "browser",
+    "storage"
+  ],
+  "author": "Vitalii Del Vorobioff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/welljs/local-crud/issues"
+  },
+  "homepage": "https://github.com/welljs/local-crud#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.10",
+    "@types/mocha": "^2.2.45",
+    "chai": "^4.1.2",
+    "jsdom": "11.5.1",
+    "jsdom-global": "3.0.2",
+    "mocha": "^4.1.0",
+    "ts-lint": "^4.5.1",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {}
+}
