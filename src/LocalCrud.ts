@@ -10,15 +10,10 @@ export interface ILocalCrudOptions {
 
 export interface IBrowserStorage {
   length: number;
-
   setItem(key: string, value: any): void;
-
   getItem(key: string): any;
-
   removeItem(key: string): void;
-
   clear(): void;
-
   key(n: number): string;
 }
 
