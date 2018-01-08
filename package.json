@@ -4,7 +4,8 @@
   "description": "CRUD emulation in browser storage",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "mocha --require ts-node/register -r jsdom-global/register test/**/*.spec.ts"
+    "test": "mocha --require ts-node/register -r jsdom-global/register test/**/*.spec.ts",
+    "build": "webpack --display-error-details"
   },
   "repository": {
     "type": "git",
@@ -26,13 +27,22 @@
   "devDependencies": {
     "@types/chai": "^4.0.10",
     "@types/mocha": "^2.2.45",
+    "awesome-typescript-loader": "^3.4.1",
+    "babel-loader": "^7.1.2",
     "chai": "^4.1.2",
+    "chunk-manifest-webpack-plugin": "^1.1.2",
+    "copy-webpack-plugin": "^4.3.1",
     "jsdom": "11.5.1",
     "jsdom-global": "3.0.2",
     "mocha": "^4.1.0",
+    "strip-loader": "^0.1.2",
     "ts-lint": "^4.5.1",
     "ts-node": "^4.1.0",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-md5-hash": "0.0.6"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-core": "^6.26.0"
+  }
 }

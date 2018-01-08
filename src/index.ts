@@ -1,0 +1,1 @@
+export {LocalCrud} from './LocalCrud';

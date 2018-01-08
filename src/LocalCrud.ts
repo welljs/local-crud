@@ -35,7 +35,7 @@ const defaults: ILocalCrudOptions = {
 
 };
 
-export default class LocalCrud {
+export class LocalCrud {
   private options: ILocalCrudOptions;
   private key: string;
   private storage: IBrowserStorage;
