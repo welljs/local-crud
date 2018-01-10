@@ -1,22 +1,20 @@
 {
   "compilerOptions": {
     "outDir": "./tsbuild/",
+    "sourceMap": true,
     "module": "commonjs",
     "target": "es5",
-    "lib":["dom", "es6", "dom.iterable", "scripthost", "es2016.array.include", "es2015", "es2015.promise", "es2017"],
-    "sourceMap": true,
+    "lib":["es6", "dom.iterable", "scripthost", "es2016.array.include", "es2015.promise", "es2017"],
     "strictNullChecks": true,
-    "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true,
     "removeComments": true
   },
   "include": [
-    "./src"
+    "src/**/*"
   ],
   "exclude": [
     "./node_modules",
-    "./test"
+    "dist"
   ]
 }

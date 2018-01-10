@@ -1,1 +1,2 @@
-export {LocalCrud} from './LocalCrud';
+import {LocalCrud} from './LocalCrud';
+export default LocalCrud;

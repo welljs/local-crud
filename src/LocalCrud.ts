@@ -1,38 +1,8 @@
-export enum ELocalStorageType {
-  LOCAL_STORAGE = 'localStorage',
-  SESSION_STORAGE = 'sessionStorage'
-}
-
-export interface ILocalCrudOptions {
-  storageType: ELocalStorageType;
-  debug: boolean;
-}
-
-export interface IBrowserStorage {
-  length: number;
-  setItem(key: string, value: any): void;
-  getItem(key: string): any;
-  removeItem(key: string): void;
-  clear(): void;
-  key(n: number): string;
-}
-
-interface IEntity {
-  id: string;
-}
-
-export type TPropertyType = string | number | boolean | null;
-
-export interface IResponse {
-  status: 'ok' | 'error';
-  data?: object;
-  error?: any;
-}
+import { ELocalStorageType, IBrowserStorage, IEntity, ILocalCrudOptions, IResponse, TPropertyType } from './main';
 
 const defaults: ILocalCrudOptions = {
   storageType: ELocalStorageType.LOCAL_STORAGE,
   debug: false
-
 };
 
 export class LocalCrud {
@@ -165,7 +135,7 @@ export class LocalCrud {
     }
   }
 
-  private loadFromStorage(): any[] {
+  private loadFromStorage<Data>(): Data[] {
     const {debug} = this.options;
     if (debug) {
       console.debug(`loading from storage by key <${this.key}>...`);
@@ -173,7 +143,7 @@ export class LocalCrud {
     return JSON.parse(this.storage.getItem(this.key) || []);
   }
 
-  private saveToStorage(data: object | any[]): this {
+  private saveToStorage<Data>(data: Data | Data[]): this {
     const {debug} = this.options;
     if (debug) {
       console.debug(`writing to storage by key <${this.key}>...`);

@@ -22,19 +22,6 @@ const config = {
   entry: {
     index: './src/index.ts'
   },
-  externals: [
-    'autoprefixer',
-    'path',
-    'html-webpack-plugin',
-    'extract-text-webpack-plugin',
-    'webpack-md5-hash',
-    'copy-webpack-plugin',
-    'strip-loader',
-    'easy-redux',
-    'lodash',
-    'moment',
-    'superagent',
-  ],
   node: {
     fs: "empty",
     fsevents: "empty"
@@ -53,8 +40,8 @@ const config = {
       {
         test: /\.js$/,
         exclude,
-        loaders: [strip.loader('debug'), 'babel-loader'],
         include,
+        loaders: [strip.loader('debug'), 'babel-loader'],
       },
       {
         test: /\.ts$/,

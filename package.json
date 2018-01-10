@@ -2,10 +2,12 @@
   "name": "local-crud",
   "version": "1.0.0",
   "description": "CRUD emulation in browser storage",
-  "main": "./dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "mocha --require ts-node/register -r jsdom-global/register test/**/*.spec.ts",
-    "build": "webpack --display-error-details"
+    "build": "webpack --display-error-details",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -40,9 +42,9 @@
     "ts-node": "^4.1.0",
     "typescript": "^2.6.2",
     "webpack": "^3.10.0",
+    "babel-core": "^6.26.0",
     "webpack-md5-hash": "0.0.6"
   },
   "dependencies": {
-    "babel-core": "^6.26.0"
   }
 }
