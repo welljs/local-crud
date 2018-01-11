@@ -1,4 +1,35 @@
-import { ELocalStorageType, IBrowserStorage, IEntity, ILocalCrudOptions, IResponse, TPropertyType } from './main';
+
+export enum ELocalStorageType {
+  LOCAL_STORAGE = 'localStorage',
+  SESSION_STORAGE = 'sessionStorage'
+}
+
+export interface ILocalCrudOptions {
+  storageType: ELocalStorageType;
+  debug: boolean;
+}
+
+export interface IBrowserStorage {
+  length: number;
+  setItem(key: string, value: any): void;
+  getItem(key: string): any;
+  removeItem(key: string): void;
+  clear(): void;
+  key(n: number): string;
+}
+
+export interface IEntity {
+  id: string;
+}
+
+export type TPropertyType = string | number | boolean | null;
+
+export interface IResponse {
+  status: 'ok' | 'error';
+  data?: object;
+  error?: any;
+}
+
 
 const defaults: ILocalCrudOptions = {
   storageType: ELocalStorageType.LOCAL_STORAGE,

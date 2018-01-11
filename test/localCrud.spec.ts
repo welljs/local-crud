@@ -1,7 +1,8 @@
 import {expect} from 'chai';
 import 'mocha';
 import {storageMock} from '../src/storageMock';
-import LocalCrud, {IResponse} from '../src/LocalCrud';
+import LocalCrud from '../src';
+import {IResponse} from '../src/LocalCrud';
 import {testData, ITestDataItem} from './testData';
 
 // adding a storage mock to global window
