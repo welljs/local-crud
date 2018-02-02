@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 import 'mocha';
 import {storageMock} from '../src/storageMock';
-import LocalCrud from '../src';
+import LocalCrud from '../dist';
 import {IResponse} from '../src/LocalCrud';
 import {testData, ITestDataItem} from './testData';
 

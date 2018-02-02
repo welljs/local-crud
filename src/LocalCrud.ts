@@ -30,7 +30,6 @@ export interface IResponse {
   error?: any;
 }
 
-
 const defaults: ILocalCrudOptions = {
   storageType: ELocalStorageType.LOCAL_STORAGE,
   debug: false
