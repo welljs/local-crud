@@ -3,10 +3,11 @@ export = LocalCrud;
 
 declare class LocalCrud {
   constructor(key: string, options?: LocalCrud.ILocalCrudOptions);
-  public create<Data extends LocalCrud.IEntity>(data: Data | Data[]): Promise<LocalCrud.IResponse>;
-  public read(key?: string, value?: LocalCrud.TPropertyType): Promise<LocalCrud.IResponse>;
-  public update(key: string, value: LocalCrud.TPropertyType, updates: object): Promise<LocalCrud.IResponse>;
-  public delete(key: string, value: LocalCrud.TPropertyType): Promise<LocalCrud.IResponse>;
+  public create<Data extends LocalCrud.IEntity>(data: Data | Data[]): Promise<LocalCrud.IResponse<undefined>>;
+  public read(key: string, value: LocalCrud.TPropertyType): Promise<LocalCrud.IResponse<undefined>>;
+  public read(): Promise<LocalCrud.IResponse<any[]>>;
+  public update(key: string, value: LocalCrud.TPropertyType, updates: object): Promise<LocalCrud.IResponse<undefined>>;
+  public delete(key: string, value: LocalCrud.TPropertyType): Promise<LocalCrud.IResponse<undefined>>;
 }
 
 declare namespace LocalCrud {
@@ -35,9 +36,9 @@ declare namespace LocalCrud {
 
   type TPropertyType = string | number | boolean | null;
 
-  interface IResponse {
+  interface IResponse<Data> {
     status: 'ok' | 'error';
-    data?: object;
+    data?: Data;
     error?: any;
   }
 }
